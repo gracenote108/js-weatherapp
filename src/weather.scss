@@ -1,0 +1,263 @@
+@font-face {
+  font-family: nord;
+  src: url("./fonts/nord_regular.otf");
+  font-size: x-large;
+}
+
+* {
+  transition: 0.25s ease-in-out;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-space-around {
+  justify-content: space-around;
+}
+
+.jc-space-evenly {
+  justify-content: space-evenly;
+}
+
+.jc-space-between {
+  justify-content: space-between;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.border {
+  border-style: solid;
+}
+
+.border-bottom {
+  border-bottom: solid;
+}
+
+.normal-font {
+  font-family: fantasy;
+  font-size: medium;
+}
+
+.nord-font {
+  font-family: nord;
+  font-size: x-large;
+}
+
+.font-styles {
+  color: gold;
+  text-shadow: -2px 0 darkblue, 0 -2px darkblue, 2px 0 darkblue, 0 2px darkblue;
+}
+
+#creditlinkbox {
+  width: 40%;
+}
+
+.credit-link {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  height: 25px;
+  width: 100%;
+  border-style: solid;
+  border-width: thin;
+  cursor: pointer;
+  #unhovered {
+    position: absolute;
+    transition: all 0.5s ease;
+    background: linear-gradient(to right, cadetblue, aqua, azure);
+  }
+  #hovered {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+}
+
+.credit-link:hover {
+  #unhovered {
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  #hovered {
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: linear-gradient(to left, cadetblue, aqua, azure);
+  }
+}
+
+a {
+  width: 100%;
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: -1px 0 skyblue, 0 -1px skyblue, 1px 0 skyblue, 0 1px skyblue;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+#thebanner {
+  background-color: sandybrown;
+}
+
+#bannertitle {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  padding: 5px 5px;
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.01ms ease-in-out;
+  #odin {
+    width: 100%;
+  }
+  #crystal {
+    width: 100%;
+    text-align: center;
+  }
+  #ball {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+#bannertitle:hover {
+  text-shadow: -1px 0 skyblue, 0 -1px skyblue, 1px 0 skyblue, 0 1px skyblue;
+}
+
+#searchbar {
+  margin-bottom: 8px;
+}
+
+#searchinput {
+  height: 20px;
+}
+
+#sungif {
+  background-image: url("./gifs/sunbanner.gif");
+  background-size: 90%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+  align-items: stretch;
+}
+
+#searchbutton {
+  text-shadow: -2px 0 gold, 0 -2px gold, 2px 0 gold, 0 2px gold;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  flex-grow: 1;
+  padding-top: 10px;
+  &:hover {
+    text-shadow: -2px 0 yellow, 0 -2px yellow, 2px 0 yellow, 0 2px yellow;
+  }
+}
+
+#infobox {
+  cursor: pointer;
+}
+
+#infobox:hover {
+  text-shadow: -1px 0 skyblue, 0 -1px skyblue, 1px 0 skyblue, 0 1px skyblue;
+}
+
+#mainbody {
+  background-color: rgba(232, 185, 81, 255);
+  flex-grow: 1;
+}
+
+#loadingimage {
+  height: 200px;
+  width: 200px;
+}
+
+#weatherbox {
+  margin: 8px 0px;
+  padding: 8px;
+  width: 30%;
+  font-weight: bolder;
+  background: linear-gradient(plum, mintcream, lavender, lavenderblush);
+  text-shadow: -1px 0 gold, 0 -1px gold, 1px 0 gold, 0 1px gold;
+  #locationinfo {
+    color: darkblue;
+  }
+  #temperatureinfo {
+    color: blue;
+  }
+  #otherinfo {
+    color: mediumblue;
+  }
+}
+
+#locationinfo,
+#temperatureinfo {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+}
+
+#unitselector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-style: solid;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 25px;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    lightskyblue,
+    lightsteelblue,
+    silver
+  );
+  #metric {
+    background: transparent;
+    height: inherit;
+    width: inherit;
+  }
+  #imperial {
+    height: inherit;
+    width: inherit;
+    opacity: 0;
+  }
+}
+
+#unitselector.imperial {
+  background-image: linear-gradient(to left, coral, lightcoral, lightsalmon);
+  #metric {
+    opacity: 0;
+  }
+  #imperial {
+    opacity: 1;
+  }
+}
